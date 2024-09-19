@@ -1,4 +1,4 @@
-# Install script for directory: C:/Tarea_ExtraClase
+# Install script for directory: C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Tarea_ExtraClase/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

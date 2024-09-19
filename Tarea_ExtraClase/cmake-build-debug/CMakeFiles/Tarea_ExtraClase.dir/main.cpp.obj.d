@@ -1,5 +1,5 @@
 CMakeFiles/Tarea_ExtraClase.dir/main.cpp.obj: \
- C:\Tarea_ExtraClase\main.cpp \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\main.cpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -157,9 +157,11 @@ CMakeFiles/Tarea_ExtraClase.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:\Tarea_ExtraClase\SelectionSort.h \
- C:\Tarea_ExtraClase\SortedLinkedList.h C:\Tarea_ExtraClase\BubbleSort.h \
- C:\Tarea_ExtraClase\BST.h C:\Tarea_ExtraClase\MergeSort.h \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\SelectionSort.h \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\SortedLinkedList.h \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\BubbleSort.h \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\BST.h \
+ C:\MPointer\ExtraClaseII_DatosII\Tarea_ExtraClase\MergeSort.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \

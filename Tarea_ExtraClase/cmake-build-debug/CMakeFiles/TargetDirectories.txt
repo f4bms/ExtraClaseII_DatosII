@@ -1,3 +1,3 @@
-C:/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/Tarea_ExtraClase.dir
-C:/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/Tarea_ExtraClase.dir
+C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/rebuild_cache.dir

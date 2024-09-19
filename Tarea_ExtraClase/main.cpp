@@ -63,29 +63,29 @@ void generateAVBubble(vector<int>& vec) {
     }
     shuffle(vec.begin(), vec.end(), rng);
 }
-
-void generateWCLL(SortedLinkedList& list, int N) {
+void generateOrderedLL(SortedLinkedList& list, int N) {
     list.clear();
     for (int i = 0; i < N; ++i) {
         list.insert(i);
     }
 }
-void generateBCLL(SortedLinkedList& list, int N) {
-    list.clear();
-    for (int i = 0; i < N; ++i) {
-        list.insert(i);
+void generateWCLL(SortedLinkedList &list, int size, int excludeNumber) {
+    for (int i = 1; i <= size; ++i) {
+        if (i != excludeNumber) {
+            list.insert(i);
+        }
     }
 }
-void generateAVLL(SortedLinkedList& list, int N) {
-    list.clear();
-    vector<int> elements(N);
-    for (int i = 0; i < N; ++i) {
-        elements[i] = i;
+void generateBCLL(SortedLinkedList &list, int size, int startNumber) {
+    for (int i = 0; i < size; ++i) {
+        list.insert(startNumber + i);
     }
-    random_shuffle(elements.begin(), elements.end());
-    for (int i : elements) {
+}
+void generateAVLL(SortedLinkedList &list, int size, int &searchNumber) {
+    for (int i = 1; i <= size; ++i) {
         list.insert(i);
     }
+    searchNumber = size / 2;
 }
 template <typename T>
 void generateWCBST(vector<T>& elements) {
@@ -107,6 +107,12 @@ void generateAVBST(vector<T>& elements) {
     generateBCBST(elements); // Reutilizamos el generador aleatorio
 }
 
+int generateRandomNumber(int size) {
+    static std::mt19937 rng(std::random_device{}());
+    std::uniform_int_distribution<int> dist(0, size - 1);
+    return dist(rng);
+}
+
 
 
 int main() {
@@ -114,7 +120,6 @@ int main() {
     int cases;
     const int SIZE = 6;
     int sizes[SIZE];
-    int searchNumber;
     SortedLinkedList list;
     BST<int> bst;
 
@@ -138,47 +143,15 @@ int main() {
         }
     }
 
-    //esto tampoco se usa de nada
-    // Si el usuario selecciona LinkedList, pregunta el número a buscar
-    if (algorithm == 4) {
-        cout << "Ingrese el numero que desea buscar en la lista enlazada: ";
-        cin >> searchNumber;
-
-        if (cin.fail()) {
-            cerr << "Entrada invalida. Se requiere un numero entero." << endl;
-            cin.clear();
-            cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
-        }
-    }
-
-    //esto no sirve de absolutamente nada
-    //verifica el input del caso que se quiere probar
-    while (true) {
-        std::cout << "Elija el caso que quiere probar:" << endl;
-        std::cout << "1. Peor Caso" << endl;
-        std::cout << "2. Mejor Caso" << endl;
-        std::cout << "3. Caso Promedio" << endl;
-
-        std::cin >> cases;
-
-        if (cases < 1 || cases > 3) {
-            cerr << "Opcion invalida. Elija entre las opciones propuestas." << endl;
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        } else {
-            break;
-        }
-    }
-
     // tamaños para hacer la grafica (diferentes Ns)
-    cout << "Elige 6 tamaños que quieras probar" << endl;
+    cout << "Elige 6 tamanos que quieras probar" << endl;
 
     for (int i = 0; i < SIZE; ++i) {
         int size;
         std::cin >> size;
 
         if (size > 1000000) {
-            std::cerr << "El tamaño max es 1000000" << endl;
+            std::cerr << "El tamano max es 1000000" << endl;
             --i;
             continue;
         }
@@ -198,9 +171,9 @@ int main() {
 
 
                     double time = measureEXCTime(BubbleSort::sort, elements);
-                    cout << time << " sec" << endl;
+                    cout << "N = " << size << ", Caso " << caseType << ": " << time << " sec" << endl;
                 }
-                break;
+            break;
 
             case 2: // el de insertion sort
                 for (int caseType : {1, 2, 3}) { // Worst, Best, Average
@@ -208,10 +181,12 @@ int main() {
                     else if (caseType == 2) generateBCBubble(elements);
                     else if (caseType == 3) generateAVBubble(elements);
 
-                    double time = measureEXCTime(SelectionSort::sort, elements);
-                    cout << time << " sec" << endl;
+                    double time = measureEXCTime(SelectionSort<int>::sort, elements);
+
+                    cout << "N = " << size << ", Caso " << caseType << ": " << time << " sec" << endl;
+
                 }
-                break;
+            break;
 
             case 3: // Merge Sort
                 for (int caseType : {1, 2, 3}) {
@@ -219,41 +194,46 @@ int main() {
                     else if (caseType == 2) generateBCBubble(elements);
                     else if (caseType == 3) generateAVBubble(elements);
 
-                    double time = measureEXCTime(MergeSort::sort, elements);
-                    cout << time << " sec" << endl;
+                    double time = measureEXCTime(MergeSort<int>::sort, elements);
+
+                    cout << "N = " << size << ", Caso " << caseType << ": " << time << " sec" << endl;
                 }
-                break;
+            break;
 
             case 4: // LinkedList Search
                 for (int caseType : {1, 2, 3}) {
-                    if (caseType == 1) generateWCLL(list, size);
-                    else if (caseType == 2) generateBCLL(list, size);
-                    else if (caseType == 3) generateAVLL(list, size);
+                    list.clear();
+                    int searchNumber = generateRandomNumber(size);
+                        if (caseType == 1) generateBCLL(list, size, searchNumber);
+                        else if (caseType == 2) generateWCLL(list, size, searchNumber);
+                        else if (caseType == 3) generateAVLL(list, size, searchNumber);
 
-                    double time = measureEXCtime([&]() {
-                        list.search(searchNumber);
-                    });
-                    cout << "N = " << size << ", Tiempo: " << time << " sec" << endl;
-                }
-                break;
+                        double time = measureEXCtime([&]() {
+                            list.search(searchNumber);
+                        });
+                        cout << "N = " << size << ", Caso " << caseType << ": " << time << " sec" << endl;
+                    }
+            break;
 
             case 5: { // Binary Search Tree Insert
-                BST<int> bst;  // Utilizando BST genérico
-                for (int caseType : {1, 2, 3}) {
-                    if (caseType == 1) generateWCBST(elements);  // Peor caso
-                    else if (caseType == 2) generateBCBST(elements); // Mejor caso
-                    else if (caseType == 3) generateAVBST(elements); // Caso promedio
+                    BST<int> bst;
+                    for (int caseType : {1, 2, 3}) {
+                        if (caseType == 1) generateWCBST(elements);  // Peor caso
+                        else if (caseType == 2) generateBCBST(elements); // Mejor caso
+                        else if (caseType == 3) generateAVBST(elements); // Caso promedio
 
-                    bst = BST<int>(); // Reiniciar el árbol para cada caso
-                    double time = measureEXCTimeBST(bst, elements);
-                    cout << "N = " << size << ", Tiempo para el caso " << caseType << ": " << time << " sec" << endl;
+                        bst = BST<int>();
+                        double time = measureEXCTimeBST(bst, elements);
+                        cout << "N = " << size << ", Tiempo para el caso " << caseType << ": " << time << " sec" << endl;
+                    }
+                    break;
+
                 }
-                break;
 
             }
 
         }
-
-    }
     return 0;
 }
+
+

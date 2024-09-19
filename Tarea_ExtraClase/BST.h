@@ -21,7 +21,6 @@ public:
     }
 
 private:
-    // Función recursiva para insertar en el árbol
     BSTNode* insertRec(BSTNode* node, const T& key) {
         if (node == nullptr) {
             return new BSTNode(key);

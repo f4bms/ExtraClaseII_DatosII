@@ -7,7 +7,6 @@ using namespace std;
 
 class BubbleSort {
 public:
-    // Static method to perform bubble sort on a vector
     static void sort(vector<int>& arr) {
         int size = arr.size();  // Obtener el tamaño del vector
         for (int i = 0; i < size - 1; ++i) {
@@ -22,7 +21,6 @@ public:
         }
     }
 
-    // Static method to print the vector
     static void printArray(const vector<int>& arr) {
         for (int i = 0; i < arr.size(); ++i) {
             cout << arr[i] << " ";

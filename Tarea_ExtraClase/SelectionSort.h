@@ -5,9 +5,10 @@
 #include <vector>
 using namespace std;
 
+template<typename T>
 class SelectionSort {
 public:
-    static void sort(vector<int>& arr) {
+    static void sort(vector<T>& arr) {
         int size = arr.size();
         for (int i = 0; i < size - 1; ++i) {
             int minIndex = i;
@@ -20,11 +21,12 @@ public:
         }
     }
 
-    static void printArray(const vector<int>& arr) {
-        for (int i = 0; i < arr.size(); ++i) {
-            cout << arr[i] << " ";
+    static void printArray(const vector<T>& arr) {
+        for (const T& elem : arr) {
+            cout << elem << " ";
         }
         cout << endl;
     }
 };
-#endif //SELECTIONSORT_H
+
+#endif // SELECTIONSORT_H

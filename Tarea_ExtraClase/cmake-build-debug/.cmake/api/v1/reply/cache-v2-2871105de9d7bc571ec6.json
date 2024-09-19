@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Tarea_ExtraClase/cmake-build-debug"
+			"value" : "c:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -559,7 +559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -631,7 +631,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Tarea_ExtraClase"
+			"value" : "C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1267,7 +1267,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Tarea_ExtraClase/cmake-build-debug"
+			"value" : "C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase/cmake-build-debug"
 		},
 		{
 			"name" : "Tarea_ExtraClase_IS_TOP_LEVEL",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Tarea_ExtraClase"
+			"value" : "C:/MPointer/ExtraClaseII_DatosII/Tarea_ExtraClase"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
